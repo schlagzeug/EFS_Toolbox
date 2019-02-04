@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="ToolBox.UserControls.ApkInstaller"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToolBox.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Label Content="APK Directory"
+               Margin="0,0,0,0"/>
+
+        <TextBox Name="TextBox_APKDirectory"
+                 VerticalContentAlignment="Center"
+                 VerticalAlignment="Top" Height="25"
+                 Margin="85,0,35,0"
+                 TextChanged="TextBox_APKDirectory_OnTextChanged"/>
+
+        <Button Name="Button_ChooseFolder" Content="..."
+                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                Width="30" Height="25"
+                Margin="0,0,0,0"
+                Click="Button_ChooseFolder_OnClick"/>
+
+        <ListBox Name="ListBox_APKList"
+                 Margin="0,30,0,35"
+                 SelectionMode="Single"/>
+
+        <Button Name="Button_InstallAPK" Content="Install APK"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Width="120" Height="30"
+                Margin="0,0,0,0"
+                Click="Button_InstallAPK_OnClick"/>
+    </Grid>
+</UserControl>

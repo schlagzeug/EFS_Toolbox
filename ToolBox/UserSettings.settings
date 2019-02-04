@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ToolBox" GeneratedClassName="UserSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ApkDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Work\Testing\APKs</Value>
+    </Setting>
+    <Setting Name="LogCatSaveDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Work\Testing\ADB commands\Logcat</Value>
+    </Setting>
+    <Setting Name="DeviceAppLogSaveDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Work\Testing\ADB commands\applogs</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

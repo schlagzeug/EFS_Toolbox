@@ -1,0 +1,253 @@
+﻿<UserControl x:Class="ToolBox.UserControls.AndroidTools"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToolBox.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="612" d:DesignWidth="1002">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="230"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0">
+            <TabItem Header="eFleetSuite" Name="Tab_eFS">
+                <Grid Name="Grid_eFS">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <GroupBox Header="Provision" Grid.Column="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Host"
+                                   Grid.Row="0" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+                            <ComboBox Name="ComboBox_Host"
+                                      Grid.Row="0" Grid.Column="1"
+                                      Height="25"
+                                      VerticalContentAlignment="Center"
+                                      SelectionChanged="ComboBox_Host_OnSelectionChanged"/>
+                            
+                            <Label Content="Organization ID"
+                                   Grid.Row="1" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+                            <ComboBox Name="ComboBox_Org"
+                                      Grid.Row="1" Grid.Column="1"
+                                      Height="25"
+                                      VerticalContentAlignment="Center"/>
+
+                            <Label Content="Vehicle ID"
+                                   Grid.Row="2" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+                            
+                            <TextBox Name="TextBox_VehicleID"
+                                     Grid.Row="2" Grid.Column="1"
+                                     Height="25"
+                                     VerticalContentAlignment="Center"/>
+
+                            <Label Content="Use Intent"
+                                   Grid.Row="3" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+                            <CheckBox Name="CheckBox_UseIntent_Provision"
+                                      Grid.Row="3" Grid.Column="1"
+                                      Height="25"
+                                      VerticalContentAlignment="Center"/>
+
+
+                            <Button Name="Button_Provision" Content="Provision"
+                                    Grid.Row="4" Grid.Column="1"
+                                    Height="25" Width="100"
+                                    VerticalContentAlignment="Center"
+                                    HorizontalAlignment="Right"
+                                    Click="Button_Provision_OnClick"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Header="Login" Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Driver"
+                                   Grid.Row="0" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+                            <ComboBox Name="ComboBox_Driver"
+                                      Grid.Row="0" Grid.Column="1"
+                                      Height="25"
+                                      VerticalContentAlignment="Center"/>
+
+                            <Label Content="Password"
+                                   Grid.Row="1" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+                            <TextBox Name="TextBox_Password"
+                                     Grid.Row="1" Grid.Column="1"
+                                     Height="25"
+                                     VerticalContentAlignment="Center"/>
+
+
+                            <Label Content="Use Intent"
+                                   Grid.Row="3" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+                            <CheckBox Name="CheckBox_UseIntent_DriverLogin"
+                                      Grid.Row="3" Grid.Column="1"
+                                      Height="25"
+                                      VerticalContentAlignment="Center"/>
+
+
+                            <Button Name="Button_DriverLogin" Content="Log In"
+                                    Grid.Row="4" Grid.Column="1"
+                                    Height="25" Width="100"
+                                    VerticalContentAlignment="Center"
+                                    HorizontalAlignment="Right"
+                                    Click="Button_DriverLogin_OnClick"/>
+
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Commands" Name="Tab_Commands">
+                <Grid Name="Grid_Buttons">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/> <!-- Row 0 -->
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/> <!-- Row 2 -->
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/> <!-- Row 4 -->
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/> <!-- Row 6 -->
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/> <!-- Row 8 -->
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/> <!-- Row 10 -->
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/> <!-- Column 0 -->
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="1*"/> <!-- Column 2 -->
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="1*"/> <!-- Column 4 -->
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="1*"/> <!-- Column 6 -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Button Row 1 (Grid.Row="0") -->
+                    <Button Name="Button_StopEFS" Content="Stop EFS"
+                            Grid.Row="0" Grid.Column="0"
+                            Click="Button_StopEFS_OnClick"/>
+
+                    <Button Name="Button_StopELDSim" Content="Stop ELDSim"
+                            Grid.Row="0" Grid.Column="2"
+                            Click="Button_StopELDSim_OnClick"/>
+
+                    <Button Name="Button_StopWatchdog" Content="Stop Watchdog"
+                            Grid.Row="0" Grid.Column="4"
+                            Click="Button_StopWatchdog_OnClick"/>
+
+                    <!-- Button Row 2 (Grid.Row="2") -->
+                    <Button Name="Button_DeleteDBFolder" Content="Delete DB Folder"
+                            Grid.Row="2" Grid.Column="0"
+                            Click="Button_DeleteDBFolder_OnClick"/>
+
+                    <!-- Button Row 3 (Grid.Row="4") -->
+                    <Button Name="Button_PullEFSLogs" Content="Pull EFS Logs"
+                            Grid.Row="4" Grid.Column="0"
+                            Click="Button_PullEFSLogs_OnClick"/>
+
+                    <Button Name="Button_PullLogcat" Content="Pull Logcat"
+                            Grid.Row="4" Grid.Column="2"
+                            Click="Button_PullLogcat_OnClick"/>
+
+                    <!-- Button Row 4 (Grid.Row="6") -->
+
+                    <!-- Button Row 5 (Grid.Row="8") -->
+
+                    <!-- Button Row 6 (Grid.Row="10") -->
+                    <Button Name="Button_UninstallEFS" Content="Uninstall EFS"
+                            Grid.Row="10" Grid.Column="0"
+                            Click="Button_UninstallEFS_OnClick"/>
+
+                    <Button Name="Button_UninstallELDSim" Content="Uninstall ELDSim"
+                            Grid.Row="10" Grid.Column="2"
+                            Click="Button_UninstallELDSim_OnClick"/>
+
+                    <Button Name="Button_UninstallWatchdog" Content="Uninstall Watchdog"
+                            Grid.Row="10" Grid.Column="4"
+                            Click="Button_UninstallWatchdog_OnClick"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="APKs" Name="Tab_APKs">
+                <Grid Name="Grid_APK">
+                    <Label Content="APK Directory"
+                           Margin="0,0,0,0"/>
+
+                    <TextBox Name="TextBox_APKDirectory"
+                             VerticalContentAlignment="Center"
+                             VerticalAlignment="Top" Height="25"
+                             Margin="85,0,35,0"
+                             TextChanged="TextBox_APKDirectory_OnTextChanged"/>
+
+                    <Button Name="Button_ChooseFolder" Content="..."
+                            HorizontalAlignment="Right" VerticalAlignment="Top" 
+                            Width="30" Height="25"
+                            Margin="0,0,0,0"
+                            Click="Button_ChooseFolder_OnClick"/>
+
+                    <ListBox Name="ListBox_APKList"
+                             Margin="0,30,0,35"
+                             SelectionMode="Single"/>
+
+                    <Button Name="Button_InstallAPK" Content="Install APK"
+                            HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            Width="120" Height="30"
+                            Margin="0,0,0,0"
+                            Click="Button_InstallAPK_OnClick"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Grid Grid.Row="1" Margin="0,5,0,0">
+            <UserControl Name="OutputTextBoxControl"/>
+            <!--<TextBox Name="TextBox_Output" IsReadOnly="True"
+                     Background="Black" Foreground="White"/>-->
+        </Grid>
+    </Grid>
+</UserControl>
