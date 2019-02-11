@@ -19,7 +19,6 @@ namespace ToolBox.UserControls
         public static event EventHandler<string> BeginOutput;
         public static event EventHandler<string> EndOutput;
 
-        private EFleetSuiteActions EFleetSuiteActions;
         private AndroidCommands AndroidCommands;
         private ApkInstaller ApkInstaller;
         private OutputTextBox OutputTextBox;
@@ -30,10 +29,6 @@ namespace ToolBox.UserControls
         public AndroidTools()
         {
             InitializeComponent();
-
-            EFleetSuiteActions = new EFleetSuiteActions();
-            EFSTabUserControl.Content = EFleetSuiteActions;
-            EFleetSuiteActions.NotifyStartEvent += HandleStartEventFromChild;
 
             AndroidCommands = new AndroidCommands();
             CommandsTabUserControl.Content = AndroidCommands;

@@ -1,0 +1,177 @@
+﻿<UserControl x:Class="ToolBox.UserControls.AndroidCommands"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToolBox.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="Grid_Buttons" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <!-- Row 0 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <!-- Row 2 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <!-- Row 4 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <!-- Row 6 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <!-- Row 8 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <!-- Row 10 -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <!-- Column 0 -->
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="1*"/>
+                <!-- Column 2 -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Button Row 1 (Grid.Row="0") -->
+            <Button Name="Button_StopEFS" Content="Stop EFS"
+                    Grid.Row="0" Grid.Column="0"
+                    Click="Button_StopEFS_OnClick"/>
+
+            <Button Name="Button_UninstallEFS" Content="Uninstall EFS"
+                    Grid.Row="0" Grid.Column="2"
+                    Click="Button_UninstallEFS_OnClick"/>
+
+            <!-- Button Row 2 (Grid.Row="2") -->
+            <Button Name="Button_StopELDSim" Content="Stop ELDSim"
+                    Grid.Row="2" Grid.Column="0"
+                    Click="Button_StopELDSim_OnClick"/>
+
+            <Button Name="Button_UninstallELDSim" Content="Uninstall ELDSim"
+                    Grid.Row="2" Grid.Column="2"
+                    Click="Button_UninstallELDSim_OnClick"/>
+
+            <!-- Button Row 3 (Grid.Row="4") -->
+            <Button Name="Button_StopWatchdog" Content="Stop Watchdog"
+                    Grid.Row="4" Grid.Column="0"
+                    Click="Button_StopWatchdog_OnClick"/>
+
+            <Button Name="Button_UninstallWatchdog" Content="Uninstall Watchdog"
+                    Grid.Row="4" Grid.Column="2"
+                    Click="Button_UninstallWatchdog_OnClick"/>
+
+            <!-- Button Row 4 (Grid.Row="6") -->
+            <Button Name="Button_PullEFSLogs" Content="Pull EFS Logs"
+                    Grid.Row="6" Grid.Column="0"
+                    Click="Button_PullEFSLogs_OnClick"/>
+
+            <Button Name="Button_PullLogcat" Content="Pull Logcat"
+                    Grid.Row="6" Grid.Column="2"
+                    Click="Button_PullLogcat_OnClick"/>
+
+            <!-- Button Row 5 (Grid.Row="8") -->
+            <Button Name="Button_DeleteDBFolder" Content="Delete DB Folder"
+                    Grid.Row="8" Grid.Column="0"
+                    Click="Button_DeleteDBFolder_OnClick"/>
+
+            <!-- Button Row 6 (Grid.Row="10") -->
+
+
+        </Grid>
+        
+        <Grid Background="Black" Grid.Column="2"/>
+
+        <Grid Name="Grid_ProvisionLogin" Grid.Column="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Host"
+                                   Grid.Row="0" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+            <ComboBox Name="ComboBox_Host"
+                                      Grid.Row="0" Grid.Column="1"
+                                      Height="25"
+                                      VerticalContentAlignment="Center"
+                                      SelectionChanged="ComboBox_Host_OnSelectionChanged"/>
+
+            <Label Content="Organization ID"
+                                   Grid.Row="1" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+            <ComboBox Name="ComboBox_Org"
+                                      Grid.Row="1" Grid.Column="1"
+                                      Height="25"
+                                      VerticalContentAlignment="Center"
+                          SelectionChanged="ComboBox_Org_OnSelectionChanged"/>
+
+            <Label Content="Vehicle ID"
+                                   Grid.Row="2" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+            <TextBox Name="TextBox_VehicleID"
+                                     Grid.Row="2" Grid.Column="1"
+                                     Height="25"
+                                     VerticalContentAlignment="Center"/>
+
+            <Label Content="Driver"
+                   Grid.Row="3" Grid.Column="0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Right"/>
+
+            <ComboBox Name="ComboBox_Driver"
+                      Grid.Row="3" Grid.Column="1"
+                      Height="25"
+                      VerticalContentAlignment="Center"
+                      SelectionChanged="ComboBox_Driver_OnSelectionChanged"/>
+
+            <Label Content="Use Intent"
+                                   Grid.Row="4" Grid.Column="0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Right"/>
+
+            <CheckBox Name="CheckBox_UseIntent"
+                                      Grid.Row="4" Grid.Column="1"
+                                      Height="25"
+                                      VerticalContentAlignment="Center"/>
+
+
+            <Button Name="Button_Provision" Content="Provision"
+                                    Grid.Row="5" Grid.ColumnSpan="2"
+                                    Height="25" Width="100" Margin="0,0,105,0"
+                                    VerticalContentAlignment="Center"
+                                    HorizontalAlignment="Right"
+                                    Click="Button_Provision_OnClick"/>
+
+            <Button Name="Button_DriverLogin" Content="Log In"
+                    Grid.Row="5" Grid.ColumnSpan="2"
+                    Height="25" Width="100"
+                    VerticalContentAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Click="Button_DriverLogin_OnClick"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -73,9 +73,6 @@
     <Compile Include="UserControls\ApkInstaller.xaml.cs">
       <DependentUpon>ApkInstaller.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\EFleetSuiteActions.xaml.cs">
-      <DependentUpon>EFleetSuiteActions.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\OutputTextBox.xaml.cs">
       <DependentUpon>OutputTextBox.xaml</DependentUpon>
     </Compile>
@@ -132,10 +129,6 @@
     <Page Include="UserControls\AppLogViewer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\EFleetSuiteActions.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\OutputTextBox.xaml">
       <SubType>Designer</SubType>

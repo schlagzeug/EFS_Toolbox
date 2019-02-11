@@ -1,13 +1,11 @@
 C:\Work\ToolBox\ToolBox\bin\Debug\ToolBox.exe.config
 C:\Work\ToolBox\ToolBox\bin\Debug\ToolBox.exe
 C:\Work\ToolBox\ToolBox\bin\Debug\ToolBox.pdb
-C:\Work\ToolBox\ToolBox\obj\Debug\ToolBox.csprojResolveAssemblyReference.cache
 C:\Work\ToolBox\ToolBox\obj\Debug\MainWindow.g.cs
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\AndroidCommands.g.cs
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\AndroidTools.g.cs
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\ApkInstaller.g.cs
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\AppLogViewer.g.cs
-C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\EFleetSuiteActions.g.cs
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\OutputTextBox.g.cs
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\QuickTools.g.cs
 C:\Work\ToolBox\ToolBox\obj\Debug\App.g.cs
@@ -18,7 +16,6 @@ C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\AndroidCommands.baml
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\AndroidTools.baml
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\ApkInstaller.baml
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\AppLogViewer.baml
-C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\EFleetSuiteActions.baml
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\OutputTextBox.baml
 C:\Work\ToolBox\ToolBox\obj\Debug\UserControls\QuickTools.baml
 C:\Work\ToolBox\ToolBox\obj\Debug\ToolBox.g.resources
