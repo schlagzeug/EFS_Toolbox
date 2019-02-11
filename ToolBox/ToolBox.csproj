@@ -63,10 +63,18 @@
     <Compile Include="Objects\AppLog\AppLog.cs" />
     <Compile Include="Objects\AppLog\AppLogData.cs" />
     <Compile Include="Objects\AppLog\AppLogFile.cs" />
+    <Compile Include="Objects\eFleetSuite\LoginDriver.cs" />
     <Compile Include="Objects\eFleetSuite\ProvisioningHost.cs" />
+    <Compile Include="Objects\eFleetSuite\ProvisioningOrg.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="UserControls\AndroidCommands.xaml.cs">
+      <DependentUpon>AndroidCommands.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ApkInstaller.xaml.cs">
       <DependentUpon>ApkInstaller.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EFleetSuiteActions.xaml.cs">
+      <DependentUpon>EFleetSuiteActions.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\OutputTextBox.xaml.cs">
       <DependentUpon>OutputTextBox.xaml</DependentUpon>
@@ -109,6 +117,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\AndroidCommands.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\AndroidTools.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -120,6 +132,10 @@
     <Page Include="UserControls\AppLogViewer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\EFleetSuiteActions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\OutputTextBox.xaml">
       <SubType>Designer</SubType>
@@ -147,6 +163,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -55,7 +55,7 @@ namespace ToolBox.Utility
             }
             else
             {
-                return string.Empty;
+                return "multiple found";
             }
         }
     }

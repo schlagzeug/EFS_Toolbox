@@ -10,15 +10,29 @@ namespace ToolBox
         {
             get
             {
-                return new List<ProvisioningHost>
+                var hostsString = UserSettings.Default.ProvisioningHosts;
+                var x = hostsString.Split('~');
+                var hostList = new List<ProvisioningHost>();
+
+                foreach (var item in x)
                 {
-                    new ProvisioningHost("Local", NetworkUtility.GetCurrentIPAddress()),
-                    new ProvisioningHost("Epsilon", "epsilonmobile.iseinc.biz")
-                };
+                    var host = new ProvisioningHost(item);
+                    hostList.Add(host);
+                }
+
+                return hostList;
             }
             set
             {
-                // nothing
+                var hostsString = string.Empty;
+                foreach (var provisioningHost in value)
+                {
+                    hostsString += provisioningHost.ToString();
+                    hostsString += "~";
+                }
+
+                hostsString.TrimEnd('~');
+                UserSettings.Default.ProvisioningHosts = hostsString;
             }
         }
 

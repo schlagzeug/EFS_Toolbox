@@ -1,9 +1,11 @@
 ﻿
 
 FC:\Work\ToolBox\ToolBox\MainWindow.xaml;;
+FC:\Work\ToolBox\ToolBox\UserControls\AndroidCommands.xaml;;
 FC:\Work\ToolBox\ToolBox\UserControls\AndroidTools.xaml;;
-FC:\Work\ToolBox\ToolBox\UserControls\AppLogViewer.xaml;;
-FC:\Work\ToolBox\ToolBox\UserControls\QuickTools.xaml;;
-FC:\Work\ToolBox\ToolBox\UserControls\OutputTextBox.xaml;;
 FC:\Work\ToolBox\ToolBox\UserControls\ApkInstaller.xaml;;
+FC:\Work\ToolBox\ToolBox\UserControls\AppLogViewer.xaml;;
+FC:\Work\ToolBox\ToolBox\UserControls\EFleetSuiteActions.xaml;;
+FC:\Work\ToolBox\ToolBox\UserControls\OutputTextBox.xaml;;
+FC:\Work\ToolBox\ToolBox\UserControls\QuickTools.xaml;;
 

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Work\ToolBox\ToolBox\App.xaml
-6-919965441
+8-2069581567
 
-331104054369
+371043500358
 14-1787462521
-MainWindow.xaml;UserControls\AndroidTools.xaml;UserControls\ApkInstaller.xaml;UserControls\AppLogViewer.xaml;UserControls\OutputTextBox.xaml;UserControls\QuickTools.xaml;
+MainWindow.xaml;UserControls\AndroidCommands.xaml;UserControls\AndroidTools.xaml;UserControls\ApkInstaller.xaml;UserControls\AppLogViewer.xaml;UserControls\EFleetSuiteActions.xaml;UserControls\OutputTextBox.xaml;UserControls\QuickTools.xaml;
 
 False
 

@@ -1,20 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using ToolBox.Objects.Android;
 using ToolBox.Utility;
-using Path = System.Windows.Shapes.Path;
 
 namespace ToolBox.UserControls
 {
@@ -26,7 +16,7 @@ namespace ToolBox.UserControls
         // TODO: add support for multiple devices
         public AndroidDevice AndroidDevice = new AndroidDevice("123456789");
 
-        public event EventHandler<string> InstallAPK;
+        public event EventHandler<string> NotifyStartEvent;
 
         public ApkInstaller()
         {
@@ -44,7 +34,7 @@ namespace ToolBox.UserControls
                 var files = new List<string>();
                 foreach (var filePath in filePaths)
                 {
-                    files.Add(System.IO.Path.GetFileName(filePath));
+                    files.Add(Path.GetFileName(filePath));
                 }
                 files.Sort();
                 ListBox_APKList.ItemsSource = files;
@@ -66,14 +56,14 @@ namespace ToolBox.UserControls
                 return;
             }
 
-            var apk = System.IO.Path.Combine(TextBox_APKDirectory.Text, ListBox_APKList.SelectedItem.ToString());
-            OnInstallApk($"Attempting to install {apk}...");
+            var apk = Path.Combine(TextBox_APKDirectory.Text, ListBox_APKList.SelectedItem.ToString());
+            InvokeNotifyStartEvent($"Attempting to install {apk}...");
             AndroidDevice.InstallAPK(apk);
         }
         
-        protected virtual void OnInstallApk(string e)
+        protected virtual void InvokeNotifyStartEvent(string s)
         {
-            InstallAPK?.Invoke(this, e);
+            NotifyStartEvent?.Invoke(this, s);
         }
     }
 }

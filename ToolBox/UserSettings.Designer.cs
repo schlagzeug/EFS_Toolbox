@@ -58,5 +58,17 @@ namespace ToolBox {
                 this["DeviceAppLogSaveDirectory"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"host=local|10.9.10.12  org=seth|seth  d=uwarbear|aaaa d=aavenicci|aaaa d=jbalgruuf|aaaa d=egraymane|aaaa d=kwhitemane|aaaa d=dpurespring|aaaa d=cvalentia|aaaa d=pavenicci|aaaa d=obattleborn|aaaa d=fsecretfire|aaaa~host=epsilon|epsilonmobile.iseinc.biz  org=seth|seth  d=nick|aaaa d=danse|aaaa d=preston|aaaa d=kellogg|aaaa d=tinkertom|aaaa d=piper|aaaa org=sethOrg|SETH1234  d=driver1|aaaa d=driver2|aaaa d=driver3|aaaa d=driver4|aaaa")]
+        public string ProvisioningHosts {
+            get {
+                return ((string)(this["ProvisioningHosts"]));
+            }
+            set {
+                this["ProvisioningHosts"] = value;
+            }
+        }
     }
 }
