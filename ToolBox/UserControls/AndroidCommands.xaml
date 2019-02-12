@@ -17,30 +17,22 @@
 
         <Grid Name="Grid_Buttons" Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <!-- Row 0 -->
+                <RowDefinition Height="1*"/> <!-- Row 0 -->
                 <RowDefinition Height="5"/>
-                <RowDefinition Height="1*"/>
-                <!-- Row 2 -->
+                <RowDefinition Height="1*"/> <!-- Row 2 -->
                 <RowDefinition Height="5"/>
-                <RowDefinition Height="1*"/>
-                <!-- Row 4 -->
+                <RowDefinition Height="1*"/> <!-- Row 4 -->
                 <RowDefinition Height="5"/>
-                <RowDefinition Height="1*"/>
-                <!-- Row 6 -->
+                <RowDefinition Height="1*"/> <!-- Row 6 -->
                 <RowDefinition Height="5"/>
-                <RowDefinition Height="1*"/>
-                <!-- Row 8 -->
+                <RowDefinition Height="1*"/> <!-- Row 8 -->
                 <RowDefinition Height="5"/>
-                <RowDefinition Height="1*"/>
-                <!-- Row 10 -->
+                <RowDefinition Height="1*"/> <!-- Row 10 -->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <!-- Column 0 -->
+                <ColumnDefinition Width="1*"/> <!-- Column 0 -->
                 <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="1*"/>
-                <!-- Column 2 -->
+                <ColumnDefinition Width="1*"/> <!-- Column 2 -->
             </Grid.ColumnDefinitions>
 
             <!-- Button Row 1 (Grid.Row="0") -->
@@ -86,19 +78,23 @@
 
             <!-- Button Row 6 (Grid.Row="10") -->
 
-
         </Grid>
         
         <Grid Background="Black" Grid.Column="2"/>
 
         <Grid Name="Grid_ProvisionLogin" Grid.Column="4">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/> <!-- Row 0 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/> <!-- Row 2 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/> <!-- Row 4 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/> <!-- Row 6 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/> <!-- Row 8 -->
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/> <!-- Row 10 -->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
@@ -106,69 +102,63 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Host"
-                                   Grid.Row="0" Grid.Column="0"
-                                   VerticalContentAlignment="Center"
-                                   HorizontalContentAlignment="Right"/>
+                   Grid.Row="0" Grid.Column="0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Right"/>
 
             <ComboBox Name="ComboBox_Host"
-                                      Grid.Row="0" Grid.Column="1"
-                                      Height="25"
-                                      VerticalContentAlignment="Center"
-                                      SelectionChanged="ComboBox_Host_OnSelectionChanged"/>
+                      Grid.Row="0" Grid.Column="1"
+                      VerticalContentAlignment="Center"
+                      SelectionChanged="ComboBox_Host_OnSelectionChanged"/>
 
             <Label Content="Organization ID"
-                                   Grid.Row="1" Grid.Column="0"
-                                   VerticalContentAlignment="Center"
-                                   HorizontalContentAlignment="Right"/>
+                   Grid.Row="2" Grid.Column="0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Right"/>
 
             <ComboBox Name="ComboBox_Org"
-                                      Grid.Row="1" Grid.Column="1"
-                                      Height="25"
-                                      VerticalContentAlignment="Center"
-                          SelectionChanged="ComboBox_Org_OnSelectionChanged"/>
+                      Grid.Row="2" Grid.Column="1"
+                      VerticalContentAlignment="Center"
+                      SelectionChanged="ComboBox_Org_OnSelectionChanged"/>
 
             <Label Content="Vehicle ID"
-                                   Grid.Row="2" Grid.Column="0"
-                                   VerticalContentAlignment="Center"
-                                   HorizontalContentAlignment="Right"/>
+                   Grid.Row="4" Grid.Column="0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Right"/>
 
             <TextBox Name="TextBox_VehicleID"
-                                     Grid.Row="2" Grid.Column="1"
-                                     Height="25"
-                                     VerticalContentAlignment="Center"/>
+                     Grid.Row="4" Grid.Column="1"
+                     VerticalContentAlignment="Center"/>
 
             <Label Content="Driver"
-                   Grid.Row="3" Grid.Column="0"
+                   Grid.Row="6" Grid.Column="0"
                    VerticalContentAlignment="Center"
                    HorizontalContentAlignment="Right"/>
 
             <ComboBox Name="ComboBox_Driver"
-                      Grid.Row="3" Grid.Column="1"
-                      Height="25"
+                      Grid.Row="6" Grid.Column="1"
                       VerticalContentAlignment="Center"
                       SelectionChanged="ComboBox_Driver_OnSelectionChanged"/>
 
             <Label Content="Use Intent"
-                                   Grid.Row="4" Grid.Column="0"
-                                   VerticalContentAlignment="Center"
-                                   HorizontalContentAlignment="Right"/>
+                   Grid.Row="8" Grid.Column="0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Right"/>
 
             <CheckBox Name="CheckBox_UseIntent"
-                                      Grid.Row="4" Grid.Column="1"
-                                      Height="25"
-                                      VerticalContentAlignment="Center"/>
-
+                      Grid.Row="8" Grid.Column="1"
+                      VerticalContentAlignment="Center"/>
 
             <Button Name="Button_Provision" Content="Provision"
-                                    Grid.Row="5" Grid.ColumnSpan="2"
-                                    Height="25" Width="100" Margin="0,0,105,0"
-                                    VerticalContentAlignment="Center"
-                                    HorizontalAlignment="Right"
-                                    Click="Button_Provision_OnClick"/>
+                    Grid.Row="10" Grid.ColumnSpan="2"
+                    Width="100" Margin="0,0,105,0"
+                    VerticalContentAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Click="Button_Provision_OnClick"/>
 
             <Button Name="Button_DriverLogin" Content="Log In"
-                    Grid.Row="5" Grid.ColumnSpan="2"
-                    Height="25" Width="100"
+                    Grid.Row="10" Grid.ColumnSpan="2"
+                    Width="100"
                     VerticalContentAlignment="Center"
                     HorizontalAlignment="Right"
                     Click="Button_DriverLogin_OnClick"/>

@@ -13,27 +13,15 @@
         </Grid.RowDefinitions>
 
         <TabControl Grid.Row="0" Name="TabControl">
-            <!--<TabItem Header="eFleetSuite">
-                <Grid>
-                    <UserControl Name="EFSTabUserControl"/>
-                </Grid>
-            </TabItem>-->
-
             <TabItem Header="Commands">
-                <Grid>
-                    <UserControl Name="CommandsTabUserControl"/>
-                </Grid>
+                <UserControl Name="CommandsTabUserControl"/>
             </TabItem>
 
             <TabItem Header="Install APKs">
-                <Grid>
-                    <UserControl Name="ApkTabControl"/>
-                </Grid>
+                <UserControl Name="ApkTabControl"/>
             </TabItem>
         </TabControl>
 
-        <Grid Grid.Row="1" Margin="0,5,0,0">
-            <UserControl Name="OutputTextBoxControl"/>
-        </Grid>
+        <UserControl Grid.Row="1" Name="OutputTextBoxControl"/>
     </Grid>
 </UserControl>

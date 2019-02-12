@@ -17,6 +17,7 @@ namespace ToolBox.UserControls
     {
         // TODO: add support for multiple devices
         public AndroidDevice AndroidDevice = new AndroidDevice("123456789");
+
         public List<ProvisioningHost> HostList { get; set; }
 
         public event EventHandler<string> NotifyStartEvent;
@@ -31,6 +32,8 @@ namespace ToolBox.UserControls
             }
 
             TextBox_VehicleID.Text = "ELDSim";
+            CheckBox_UseIntent.IsChecked = true;
+            UpdateUI();
         }
 
         private void Button_StopEFS_OnClick(object sender, RoutedEventArgs e)
@@ -98,28 +101,34 @@ namespace ToolBox.UserControls
 
         private void ComboBox_Host_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            ComboBox_Org.Items.Clear();
+
             var host = GetSelectedHost();
-            if (host == null || ComboBox_Host.SelectedIndex == -1)
+            if (host != null)
             {
-                NotificationUtility.ShowError("Invalid Host");
-                ComboBox_Host.SelectedIndex = -1;
-                return;
+                foreach (var provisioningOrg in host.OrgList)
+                {
+                    ComboBox_Org.Items.Add(provisioningOrg.Name);
+                }
             }
 
-            ComboBox_Org.IsEnabled = true;
-            foreach (var provisioningOrg in host.OrgList)
-            {
-                ComboBox_Org.Items.Add(provisioningOrg.Name);
-            }
+            UpdateUI();
         }
 
         private void ComboBox_Org_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            ComboBox_Driver.Items.Clear();
+
             var org = GetSelectedOrg();
-            foreach (var driver in org.Drivers)
+            if (org != null)
             {
-                ComboBox_Driver.Items.Add(driver.DriverID);
+                foreach (var driver in org.Drivers)
+                {
+                    ComboBox_Driver.Items.Add(driver.DriverID);
+                }
             }
+
+            UpdateUI();
         }
 
         private void Button_Provision_OnClick(object sender, RoutedEventArgs e)
@@ -136,33 +145,34 @@ namespace ToolBox.UserControls
 
             if (CheckBox_UseIntent.IsChecked == true)
             {
+                InvokeNotifyStartEvent($"Provisioning device to Org \"{org.Name}\" with intent...");
                 AndroidDevice.ProvisionDevice_Intent(org.Name, org.ProvisioningKey, host.HostName, vehicle);
             }
             else
             {
+                InvokeNotifyStartEvent($"Provisioning device to Org \"{org.Name}\" with keystrokes...");
                 AndroidDevice.ProvisionDevice_Key(org.Name, org.ProvisioningKey, host.HostName, vehicle);
             }
         }
 
         private void ComboBox_Driver_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var driver = GetSelectedDriver();
-            if (driver != null)
-            {
-                Button_DriverLogin.IsEnabled = true;
-            }
+            UpdateUI();
         }
 
         private void Button_DriverLogin_OnClick(object sender, RoutedEventArgs e)
         {
             var driver = GetSelectedDriver();
+            if (driver == null) return;
 
             if (CheckBox_UseIntent.IsChecked == true)
             {
+                InvokeNotifyStartEvent($"Logging in Driver \"{driver.DriverID}\" with intent...");
                 AndroidDevice.LogInDriver_Intent(driver.DriverID, driver.Password);
             }
             else
             {
+                InvokeNotifyStartEvent($"Logging in Driver \"{driver.DriverID}\" with keystrokes...");
                 AndroidDevice.LogInDriver_Key(driver.DriverID, driver.Password);
             }
         }
@@ -170,6 +180,7 @@ namespace ToolBox.UserControls
         private ProvisioningHost GetSelectedHost()
         {
             var hostDisplayName = ComboBox_Host.SelectedValue?.ToString();
+
             if (hostDisplayName == null) return null;
 
             foreach (var provisioningHost in HostList)
@@ -186,8 +197,10 @@ namespace ToolBox.UserControls
         private ProvisioningOrg GetSelectedOrg()
         {
             var host = GetSelectedHost();
-            var selectedOrg = ComboBox_Org.SelectedValue.ToString();
+            var selectedOrg = ComboBox_Org.SelectedValue?.ToString();
 
+            if (host == null || selectedOrg == null) return null;
+            
             foreach (var provisioningOrg in host.OrgList)
             {
                 if (provisioningOrg.Name == selectedOrg)
@@ -202,15 +215,31 @@ namespace ToolBox.UserControls
         private LoginDriver GetSelectedDriver()
         {
             var org = GetSelectedOrg();
+            var selectedDriver = ComboBox_Driver.SelectedValue?.ToString();
+
+            if (org == null || selectedDriver == null) return null;
+
             foreach (var driver in org.Drivers)
             {
-                if (driver.DriverID == ComboBox_Driver.SelectedValue.ToString())
+                if (driver.DriverID == selectedDriver)
                 {
                     return driver;
                 }
             }
 
             return null;
+        }
+
+        private void UpdateUI()
+        {
+            var host = GetSelectedHost();
+            var org = GetSelectedOrg();
+            var driver = GetSelectedDriver();
+
+            ComboBox_Org.IsEnabled = host != null;
+            ComboBox_Driver.IsEnabled = (host != null && org != null);
+            Button_Provision.IsEnabled = (host != null && org != null);
+            Button_DriverLogin.IsEnabled = driver != null;
         }
 
         protected virtual void InvokeNotifyStartEvent(string s)
